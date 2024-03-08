@@ -36,3 +36,18 @@ function validate(userReg, userValue){
         }
     }
 }
+
+// Добавляем обработчик события input для каждого инпута
+username.addEventListener("input", removeError);
+lastname.addEventListener("input", removeError);
+email.addEventListener("input", removeError);
+password1.addEventListener("input", removeError);
+password2.addEventListener("input", removeError);
+number.addEventListener("input", removeError);
+
+function removeError(event) {
+    // Проверяем, пуст ли инпут
+    if (event.target.value === "") {
+        event.target.classList.remove("error"); // Удаляем класс error
+    }
+}
